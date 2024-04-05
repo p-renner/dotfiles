@@ -12,6 +12,7 @@ fi
 source $ZSH/oh-my-zsh.sh
 export EDITOR='nvim'
 
+export ARCHFLAGS="-arch $(uname -m)"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
