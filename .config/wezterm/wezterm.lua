@@ -1,5 +1,6 @@
 local wezterm = require 'wezterm'
 local config = {
+	default_prog = { '/bin/zsh' },
 	font = wezterm.font('JetBrainsMono Nerd Font'),
 	font_size = 15.0,
 	color_scheme = 'nordfox',
