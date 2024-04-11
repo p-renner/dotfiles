@@ -31,7 +31,7 @@ if type brew &>/dev/null; then
 	source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 elif type pacman &>/dev/null; then
 	plugins=(git archlinux fzf)
-	source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+	source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
 source $ZSH/oh-my-zsh.sh
