@@ -256,7 +256,7 @@ require('mason-lspconfig').setup()
 -- Enable the following language servers
 local servers = {
   -- clangd = {},
-  -- gopls = {},
+  gopls = {},
   -- pyright = {},
   -- rust_analyzer = {},
   intelephense = {
@@ -362,4 +362,7 @@ cmp.setup {
   },
 }
 
+vim.filetype.add({
+  pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
+})
 -- vim: ts=2 sts=2 sw=2 et
