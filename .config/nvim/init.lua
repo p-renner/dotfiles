@@ -320,4 +320,7 @@ cmp.setup {
 vim.filetype.add({
   pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
 })
+
+require('custom.options')
+require('custom.keymaps')
 -- vim: ts=2 sts=2 sw=2 et
