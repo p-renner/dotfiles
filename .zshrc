@@ -52,9 +52,6 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 # start ssh agent
-if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-  ssh-agent -t 1h > "$XDG_RUNTIME_DIR/ssh-agent.env"
-fi
 if [[ ! "$SSH_AUTH_SOCK" ]]; then
   source "$XDG_RUNTIME_DIR/ssh-agent.env" > /dev/null
 fi
@@ -88,7 +85,14 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
 	# The next line enables shell command completion for gcloud.
 	if [ -f '$HOME/google-cloud-sdk/completion.zsh.inc' ]; then . '$HOME/google-cloud-sdk/completion.zsh.inc'; fi
+elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+	export PNPM_HOME="$HOME/.local/share/pnpm"
 fi
+
+case ":$PATH:" in
+	*":$PNPM_HOME:"*) ;;
+	*) export PATH="$PNPM_HOME:$PATH" ;;
+esac
 
 alias dot='cd $HOME/dotfiles'
 alias v='nvim'
@@ -96,3 +100,4 @@ alias c='clear'
 alias syu='sudo pacman -Syu'
 alias vpn='sudo openvpn --config $HOME/.config/vpn/vpn.ovpn'
 alias gs='git status'
+
