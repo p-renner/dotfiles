@@ -34,3 +34,8 @@ vim.o.completeopt = 'menuone,noselect'
 vim.o.termguicolors = true
 
 vim.opt.conceallevel = 1
+
+-- Add custom filetypes
+vim.filetype.add({
+	pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
+})
