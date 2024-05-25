@@ -5,6 +5,9 @@ vim.o.hlsearch = false
 vim.wo.relativenumber = true
 vim.wo.number = true
 
+-- Cursor always in the middle
+vim.o.scrolloff = 999
+
 -- Enable mouse mode
 vim.o.mouse = 'a'
 
@@ -36,9 +39,9 @@ vim.o.termguicolors = true
 vim.opt.conceallevel = 1
 
 -- Add custom filetypes
-vim.filetype.add({
-	pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
-})
+vim.filetype.add {
+  pattern = { ['.*/hypr/.*%.conf'] = 'hyprlang' },
+}
 
 -- Disable unused providers
 vim.g.loaded_python3_provider = 0
