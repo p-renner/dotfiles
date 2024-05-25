@@ -239,6 +239,7 @@ local servers = {
       -- diagnostics = { disable = { 'missing-fields' } },
     },
   },
+  emmet_language_server = {},
 }
 
 -- Setup neovim lua configuration
