@@ -68,6 +68,7 @@ fi
 
 # Mac Specific Config
 if [[ "$OSTYPE" == "darwin"* ]]; then
+	export GPG_TTY=$(tty)
 	# pnpm
 	export PNPM_HOME="$HOME/Library/pnpm"
 	case ":$PATH:" in
