@@ -40,7 +40,7 @@ vim.opt.conceallevel = 1
 
 -- Add custom filetypes
 vim.filetype.add {
-  pattern = { ['.*/hypr/.*%.conf'] = 'hyprlang' },
+    pattern = { ['.*/hypr/.*%.conf'] = 'hyprlang' },
 }
 
 -- Disable unused providers

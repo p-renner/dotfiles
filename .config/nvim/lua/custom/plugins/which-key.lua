@@ -22,6 +22,5 @@ return {
                 ['<leader>h'] = { 'Git [H]unk' },
             }, { mode = 'v' })
         end,
-
     },
 }
