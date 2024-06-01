@@ -15,7 +15,9 @@ return {
                     {
                         'rafamadriz/friendly-snippets',
                         config = function()
-                            require('luasnip.loaders.from_vscode').lazy_load()
+                            require('luasnip.loaders.from_vscode').lazy_load {
+                                exclude = { 'typescript' },
+                            }
                         end,
                     },
                 },
@@ -44,7 +46,7 @@ return {
 
                     ['<C-b>'] = cmp.mapping.scroll_docs(-4),
                     ['<C-f>'] = cmp.mapping.scroll_docs(4),
-                    ['<C-y>'] = cmp.mapping.confirm { select = true },
+                    ['<C-j>'] = cmp.mapping.confirm { select = true },
 
                     ['<C-Space>'] = cmp.mapping.complete {},
 

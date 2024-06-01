@@ -31,4 +31,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 require 'custom.options'
 require 'custom.keymaps'
+
+require('luasnip.loaders.from_vscode').load { paths = { './snippets' } }
 -- vim: ts=2 sts=2 sw=2 et
