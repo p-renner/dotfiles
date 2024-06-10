@@ -97,7 +97,6 @@ return {
                     settings = {
                         intelephense = {
                             format = {
-                                enable = false,
                                 indent = true,
                                 tabSize = 4,
                                 insertSpaces = true,
