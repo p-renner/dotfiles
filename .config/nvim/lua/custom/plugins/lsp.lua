@@ -97,12 +97,7 @@ return {
                     settings = {
                         intelephense = {
                             format = {
-                                indent = true,
-                                tabSize = 4,
-                                insertSpaces = true,
-                                maxLines = 500,
-                                maxLineLength = 120,
-                                wrapAttributes = 'auto',
+                                braces = 'k&r',
                             },
                         },
                     },
