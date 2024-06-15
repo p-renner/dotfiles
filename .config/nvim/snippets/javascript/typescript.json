@@ -1,6 +1,6 @@
 {
     "Function Statement": {
-        "prefix": "function",
+        "prefix": "func",
         "body": ["function ${1:name}(${2:params}): ${3:type} {", "\t$4", "}"],
         "description": "Function Statement"
     },
@@ -8,5 +8,25 @@
         "prefix": "log",
         "body": ["console.log($1);", "$0"],
         "description": "Log to the console"
+    },
+    "For Loop": {
+        "prefix": "for",
+        "body": ["for (let ${1:i} = 0; ${1:i} < ${2:array}.length; ${1:i}++) {", "\t$3", "}"],
+        "description": "For Loop"
+    },
+    "For of Loop": {
+        "prefix": "forof",
+        "body": ["for (const ${1:item} of ${2:array}) {", "\t$3", "}"],
+        "description": "For of Loop"
+    },
+    "Expect Statement": {
+        "prefix": "expect",
+        "body": ["expect(${1:actual}).toBe(${2:expected});"],
+        "description": "Expect Statement"
+    },
+    "Test Statement": {
+        "prefix": "test",
+        "body": ["test('${1:description}', () => {", "\t$2", "});"],
+        "description": "Test Statement"
     }
 }
