@@ -102,7 +102,7 @@ return {
                         },
                     },
                 },
-                tsserver = {
+                ts_ls = {
                     settings = {
                         javascript = {
                             inlayHints = {
