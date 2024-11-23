@@ -16,20 +16,21 @@ return {
             { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
         },
         config = function()
-            require('telescope').setup {
-                defaults = {
-                    mappings = {
-                        i = {
-                            ['<C-h>'] = 'which_key',
-                        },
-                    },
-                },
-                pickers = {},
-                extensions = {},
-            }
+            local telescope = require 'telescope'
+            -- telescope.setup {
+            --         defaults = {
+            --             mappings = {
+            --                 i = {
+            --                     ['<C-h>'] = 'which_key',
+            --                 },
+            --             },
+            --         },
+            --         pickers = {},
+            --         extensions = {},
+            -- }
 
-            pcall(require('telescope').load_extension, 'fzf')
-            pcall(require('telescope').load_extension, 'ui-select')
+            pcall(telescope.load_extension, 'fzf')
+            pcall(telescope.load_extension, 'ui-select')
 
             -- See `:help telescope.builtin`
             local builtin = require 'telescope.builtin'
