@@ -63,8 +63,12 @@ return {
 
             -- Shortcut for searching your Neovim configuration files
             vim.keymap.set('n', '<leader>sn', function()
-                builtin.find_files { cwd = vim.fn.stdpath 'config' }
+                builtin.find_files { cwd = vim.fn.stdpath 'config', follow = true }
             end, { desc = '[S]earch [N]eovim files' })
+
+            vim.keymap.set('n', '<leader>sv', function()
+                builtin.find_files { cwd = '~/vault' }
+            end, { desc = '[S]earch [V]ault' })
         end,
     },
 }
