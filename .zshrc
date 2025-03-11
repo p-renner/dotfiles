@@ -58,14 +58,9 @@ export BUN_INSTALL="$HOME/.bun"
 [ -s "$BUN_INSTALL/_bun" ] && source "$BUN_INSTALL/_bun"
 path_add "$BUN_INSTALL/bin"
 
-# Start SSH agent if needed
-if [[ -z "$SSH_AUTH_SOCK" ]]; then
-  source "$XDG_RUNTIME_DIR/ssh-agent.env" > /dev/null
-fi
-
 # Auto-start tmux (only in interactive shell)
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-  tmux attach -t default || tmux new -s default
+  tmux new -As default
 fi
 
 # Ngrok completion
