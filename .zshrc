@@ -3,6 +3,13 @@ path_add() {
   [[ ":$PATH:" != *":$1:"* ]] && export PATH="$1:$PATH"
 }
 
+# Check if the given command is installed and add the plugin to the plugins array
+plugin_add_if_installed() {
+  if type "$1" &>/dev/null; then
+    plugins+=("$2")
+  fi
+}
+
 export ZSH="$HOME/.oh-my-zsh"
 
 # History settings
@@ -35,12 +42,20 @@ export ARCHFLAGS="-arch $(uname -m)"
 ZSH_THEME="robbyrussell"
 
 # Detect package manager and set plugins + syntax highlighting
+plugins=()
+
+plugin_add_if_installed git git
+plugin_add_if_installed brew brew
+plugin_add_if_installed fzf fzf
+
 if type brew &>/dev/null; then
-	plugins=(git macos brew fzf)
+	plugins+=(macos)
 	FPATH="$(brew --prefix)/share/zsh/site-functions${FPATH:+":$FPATH"}"
 	HIGHLIGHT_PATH="/opt/homebrew/share/zsh-syntax-highlighting"
-elif type pacman &>/dev/null; then
-	plugins=(git archlinux fzf)
+fi
+
+if type pacman &>/dev/null; then
+	plugins=(archlinux)
 	HIGHLIGHT_PATH="/usr/share/zsh/plugins/zsh-syntax-highlighting"
 fi
 
