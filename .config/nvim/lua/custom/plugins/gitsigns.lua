@@ -45,10 +45,9 @@ return {
                     gs.reset_hunk { vim.fn.line '.', vim.fn.line 'v' }
                 end, { desc = 'reset git hunk' })
                 -- normal mode
-                map('n', '<leader>hs', gs.stage_hunk, { desc = 'git [s]tage hunk' })
+                map('n', '<leader>hs', gs.stage_hunk, { desc = 'git [s]tage/unstage hunk' })
                 map('n', '<leader>hr', gs.reset_hunk, { desc = 'git [r]eset hunk' })
                 map('n', '<leader>hS', gs.stage_buffer, { desc = 'git [S]tage buffer' })
-                map('n', '<leader>hu', gs.undo_stage_hunk, { desc = 'git [u]ndo stage hunk' })
                 map('n', '<leader>hR', gs.reset_buffer, { desc = 'git [R]eset buffer' })
                 map('n', '<leader>hp', gs.preview_hunk, { desc = 'git [p]review hunk' })
                 map('n', '<leader>hb', gs.blame_line, { desc = 'git [b]lame line' })
