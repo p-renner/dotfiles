@@ -57,7 +57,7 @@ return {
                 end, { desc = 'git [D]iff against last commit' })
                 -- Toggles
                 map('n', '<leader>tb', gs.toggle_current_line_blame, { desc = '[T]oggle git [b]lame line' })
-                map('n', '<leader>tD', gs.toggle_deleted, { desc = '[T]oggle git show [D]eleted' })
+                map('n', '<leader>tD', gs.preview_hunk_inline, { desc = '[T]oggle git show [D]eleted' })
             end,
         },
     },
