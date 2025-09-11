@@ -55,7 +55,7 @@ if type brew &>/dev/null; then
 fi
 
 if type pacman &>/dev/null; then
-	plugins=(archlinux)
+	plugins+=(archlinux)
 	HIGHLIGHT_PATH="/usr/share/zsh/plugins/zsh-syntax-highlighting"
 fi
 
