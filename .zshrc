@@ -111,7 +111,6 @@ alias dot='cd $HOME/dotfiles'
 alias v='nvim'
 alias c='clear'
 alias syu='sudo pacman -Syu'
-alias vpn='sudo openvpn --config $HOME/.config/vpn/vpn.ovpn --mute-replay-warnings'
 alias gs='git status'
 
 
