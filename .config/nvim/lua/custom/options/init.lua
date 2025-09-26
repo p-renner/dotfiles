@@ -11,6 +11,9 @@ vim.o.scrolloff = 999
 -- Enable mouse mode
 vim.o.mouse = 'a'
 
+-- Disable mouse scroll
+vim.o.mousescroll = 'ver:0,hor:0'
+
 -- clipboard between OS and Neovim.
 vim.o.clipboard = 'unnamedplus'
 
