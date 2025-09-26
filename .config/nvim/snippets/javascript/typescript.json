@@ -14,6 +14,11 @@
         "body": ["for (let ${1:i} = 0; ${1:i} < ${2:array}.length; ${1:i}++) {", "\t$3", "}"],
         "description": "For Loop"
     },
+    "For N Loop": {
+        "prefix": "forn",
+        "body": ["for (let ${1:i} = 0; ${1:i} < ${2:n}; ${1:i}++) {", "\t$3", "}"],
+        "description": "For Loop"
+    },
     "For of Loop": {
         "prefix": "forof",
         "body": ["for (const ${1:item} of ${2:array}) {", "\t$3", "}"],
