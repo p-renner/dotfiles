@@ -6,20 +6,44 @@ return {
             'nvim-treesitter/nvim-treesitter-textobjects',
         },
         build = ':TSUpdate',
+        branch = 'master',
+        lazy = false,
+        main = 'nvim-treesitter.configs', -- Sets main module to use for opts
+        -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
         opts = {
-            -- Add languages to be installed here that you want installed for treesitter
-            ensure_installed = { 'c', 'cpp', 'go', 'lua', 'php', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash' },
-
+            ensure_installed = {
+                'bash',
+                'c',
+                'diff',
+                'html',
+                'lua',
+                'luadoc',
+                'markdown',
+                'markdown_inline',
+                'query',
+                'vim',
+                'vimdoc',
+                'php',
+                'go',
+                'python',
+                'rust',
+                'tsx',
+                'javascript',
+                'typescript',
+                'css',
+            },
             -- Autoinstall languages that are not installed.
-            auto_install = false,
-            -- Install languages synchronously
-            sync_install = false,
-            -- List of parsers to ignore installing
-            ignore_install = {},
+            auto_install = true,
+            highlight = {
+                enable = true,
+                -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
+                --  If you are experiencing weird indenting issues, add the language to
+                --  the list of additional_vim_regex_highlighting and disabled languages for indent.
+                additional_vim_regex_highlighting = { 'ruby' },
+            },
+            indent = { enable = true, disable = { 'ruby' } },
             -- Additional Treesitter modules
             modules = {},
-            highlight = { enable = true },
-            indent = { enable = true },
             incremental_selection = {
                 enable = true,
                 keymaps = {
@@ -73,10 +97,5 @@ return {
                 },
             },
         },
-        config = function(_, opts)
-            -- Prefer git instead of curl in order to improve connectivity in some environments
-            require('nvim-treesitter.install').prefer_git = true
-            require('nvim-treesitter.configs').setup(opts)
-        end,
     },
 }
