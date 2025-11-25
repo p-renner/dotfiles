@@ -113,4 +113,3 @@ alias c='clear'
 alias syu='sudo pacman -Syu'
 alias gs='git status'
 
-
