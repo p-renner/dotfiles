@@ -2,12 +2,12 @@ return {
     {
         'navarasu/onedark.nvim',
         priority = 1000, -- make sure to load this before all the other start plugins
-        tag = 'v0.1.0',
         config = function()
-            require('onedark').setup {
+            local onedark = require 'onedark'
+            onedark.setup {
                 style = 'dark',
             }
-            require('onedark').load()
+            onedark.load()
         end,
     },
 }
