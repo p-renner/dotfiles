@@ -5,6 +5,7 @@ config.default_prog = { "/bin/zsh" }
 config.font = wezterm.font("JetBrainsMono Nerd Font")
 config.font_size = 15.0
 config.color_scheme = "nordfox"
+config.enable_wayland = false
 config.hide_tab_bar_if_only_one_tab = true
 config.enable_scroll_bar = true
 config.window_padding = {
