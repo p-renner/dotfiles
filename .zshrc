@@ -70,9 +70,9 @@ nvm() {
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
   nvm "$@"
 }
-node() { nvm; node "$@"; }
-npm() { nvm; npm "$@"; }
-npx() { nvm; npx "$@"; }
+node() { nvm use default --silent; node "$@"; }
+npm() { nvm use default --silent; npm "$@"; }
+npx() { nvm use default --silent; npx "$@"; }
 
 # Bun Setup
 export BUN_INSTALL="$HOME/.bun"
@@ -112,6 +112,7 @@ fi
 # Add necessary paths
 path_add "$PNPM_HOME"
 path_add "$HOME/.local/bin"
+path_add "$HOME/.cargo/bin"
 
 alias dot='cd $HOME/dotfiles'
 alias v='nvim'
